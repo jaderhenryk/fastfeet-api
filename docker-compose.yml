@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  postgres:
+    container_name: fastfeet-pg
+    image: postgres:12.15
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: fastfeet
+      PGDATA: /data/postgres
+    volumes:
+      - ./data/pg:/data/postgres
